@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Mosaico Multimedia</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      color: #202020;
+      background: #f6f7f7;
+      font-family: Georgia, serif;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .fila {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding: 12px;
+      background: #008c83;
+      border: 2px solid #006c65;
+    }
+
+    .tarjeta {
+      padding: 12px;
+      text-align: center;
+      background: #f7f7f7;
+      border: 2px solid #222;
+    }
+
+    .tarjeta h2 {
+      min-height: 38px;
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    .video iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+
+    .musica {
+      margin-top: 30px;
+    }
+
+    .musica .fila {
+      gap: 4px;
+      padding: 4px;
+    }
+
+    .musica .tarjeta {
+      padding: 8px;
+    }
+
+    .musica .tarjeta h2 {
+      min-height: auto;
+      margin-bottom: 7px;
+      font-size: 15px;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 14px;
+      }
+
+      .fila {
+        grid-template-columns: 1fr;
+      }
+
+      .musica .fila {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>Videos</h1>
+
+    <div class="fila">
+      <article class="tarjeta video">
+        <h2>Mejor cantante</h2>
+        <iframe
+          src="https://www.youtube.com/embed/ncByymoHQRI"
+          title="Mejor cantante"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </article>
+
+      <article class="tarjeta video">
+        <h2>F*cks News</h2>
+        <iframe
+          src="https://www.youtube.com/embed/yrW3zPyu548"
+          title="F*cks News"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </article>
+
+      <article class="tarjeta video">
+        <h2>Queen</h2>
+        <iframe
+          src="https://www.youtube.com/embed/PadKCVBIN94"
+          title="Queen"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </article>
+    </div>
+  </section>
+
+  <section class="musica">
+    <h1>Música</h1>
+
+    <div class="fila">
+      <article class="tarjeta">
+        <h2>Tropical</h2>
+        <audio controls>
+          <source src="audio/tropical.mp3" type="audio/mpeg">
+          Tu navegador no admite audio HTML5.
+        </audio>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Romántica</h2>
+        <audio controls>
+          <source src="audio/romantica.mp3" type="audio/mpeg">
+          Tu navegador no admite audio HTML5.
+        </audio>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Folclore</h2>
+        <audio controls>
+          <source src="audio/folclore.mp3" type="audio/mpeg">
+          Tu navegador no admite audio HTML5.
+        </audio>
+      </article>
+    </div>
+  </section>
+</body>
+</html>

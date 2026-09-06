@@ -1,0 +1,67 @@
+/* menu.css: encabezado (logo + titulo) y barra de navegacion */
+
+header {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  align-items: center;
+  gap: 25px;
+  min-height: 110px;
+  padding: 20px;
+  background: #e6f0f5;
+  border-top: 8px solid #009bd1;
+  border-bottom: 8px solid #009bd1;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+header h1 {
+  margin: 0;
+  grid-column: 2;
+  text-align: center;
+  font: bold 25px Georgia, serif;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  background: black;
+  border-bottom: 8px solid #009bd1;
+}
+
+nav a {
+  padding: 14px 28px;
+  color: white;
+  text-decoration: none;
+  font: bold 16px Georgia, serif;
+}
+
+nav a:hover {
+  background: #0075a3;
+}
+
+@media (max-width: 700px) {
+  header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 12px;
+  }
+
+  header h1 {
+    grid-column: auto;
+    font-size: 21px;
+  }
+
+  nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav a {
+    padding: 12px;
+    text-align: center;
+  }
+}
