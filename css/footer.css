@@ -1,8 +1,76 @@
-/* footer.css: pie de pagina */
+/* =========================================
+   FOOTER - DISEÑO GRID
+   ========================================= */
 
-footer {
-  padding: 15px;
-  color: white;
-  text-align: center;
-  background: #006d9c;
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 20px;
+
+    background-color: #006d9c;
+    color: white;
+
+    text-align: center;
+}
+
+/* Información de los integrantes */
+.integrante {
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+}
+
+.integrante h3 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+}
+
+.integrante p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Información adicional */
+.footer-info {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+
+    font-size: 0.8rem;
+}
+
+/* Responsive: menos de 576px */
+@media (max-width: 575px) {
+
+    .footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        background-color: DodgerBlue;
+
+        padding: 10px;
+    }
+
+    .integrante {
+        padding: 10px;
+    }
+
+    .integrante h3 {
+        font-size: 0.5rem;
+    }
+
+    .integrante p {
+        font-size: 0.5rem;
+    }
+
+    .footer-info {
+        padding: 8px;
+        font-size: 0.5rem;
+    }
 }
