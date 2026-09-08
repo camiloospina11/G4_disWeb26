@@ -25,6 +25,7 @@
       font-size: 25px;
     }
 
+    /* Mosaico de audio y video en formato Grid (3 columnas en pantallas grandes) */
     .fila {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -78,13 +79,21 @@
       width: 100%;
     }
 
-    @media (max-width: 650px) {
+    /* Responsive para celular (menos de 576px): las tarjetas se apilan en
+       una sola columna, el fondo del grid cambia a dodgerblue y la letra
+       de las tarjetas se reduce a 0.5rem */
+    @media (max-width: 576px) {
       body {
         padding: 14px;
       }
 
       .fila {
         grid-template-columns: 1fr;
+        background: dodgerblue;
+      }
+
+      .tarjeta h2 {
+        font-size: 0.5rem;
       }
 
       .musica .fila {

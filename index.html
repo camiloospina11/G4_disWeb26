@@ -39,11 +39,14 @@
       </aside>
 
       <main>
+        <!-- El "allow" debe incluir los mismos permisos que usan los videos
+             de mosaico.html, porque este iframe los contiene y los permisos
+             no bajan automáticamente a los iframes anidados dentro de él -->
         <iframe
           name="contenido"
           src="inicio.html"
           title="Contenido del menú"
-          allow="autoplay; encrypted-media; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
       </main>
