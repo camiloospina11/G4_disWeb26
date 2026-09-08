@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asistente IA - Biodiversidad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f5f7;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .ia-container {
+      background: white;
+      width: 100%;
+      max-width: 600px;
+      border: 2px solid #143f0e;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .ia-header {
+      background: #143f0e;
+      color: white;
+      padding: 15px 20px;
+      font-weight: bold;
+      font-family: Georgia, serif;
+    }
+    .ia-chat-box {
+      height: 300px;
+      padding: 15px;
+      overflow-y: auto;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-bottom: 1px solid #a8b2bd;
+    }
+    .mensaje {
+      padding: 10px 14px;
+      border-radius: 6px;
+      max-width: 80%;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .mensaje.ia {
+      background: #e2ffcc;
+      color: black;
+      align-self: flex-start;
+      border-left: 4px solid #143f0e;
+    }
+    .mensaje.usuario {
+      background: #143f0e;
+      color: white;
+      align-self: flex-end;
+    }
+    .ia-input-area {
+      display: flex;
+      padding: 10px;
+      background: white;
+    }
+    .ia-input-area select {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #a8b2bd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .ia-input-area button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin-left: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .ia-input-area button:hover {
+      background: #143f0e;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ia-container">
+    <div class="ia-header">🌿 EcoIA - Asistente Virtual de Biodiversidad</div>
+    
+    <div class="ia-chat-box" id="chatBox">
+      <div class="mensaje ia">
+        ¡Hola! Soy tu asistente de Inteligencia Artificial especializado en la biodiversidad de Colombia. Selecciona una consulta abajo para que analice el estado de los ecosistemas.
+      </div>
+    </div>
+
+    <div class="ia-input-area">
+      <select id="preguntaSelect">
+        <option value="1">¿Cuál es la importancia del Bosque Andino?</option>
+        <option value="2">¿Cómo afecta la deforestación a los páramos?</option>
+        <option value="3">Dime una recomendación para proteger el agua</option>
+      </select>
+      <button type="button" onclick="consultarIA()">Consultar IA</button>
+    </div>
+  </div>
+
+  <script>
+    function consultarIA() {
+      const select = document.getElementById('preguntaSelect');
+      const chatBox = document.getElementById('chatBox');
+      const opcion = select.value;
+      const textoPregunta = select.options[select.selectedIndex].text;
+
+      // 1. Mostrar mensaje del usuario
+      const msgUsuario = document.createElement('div');
+      msgUsuario.className = 'mensaje usuario';
+      msgUsuario.innerText = textoPregunta;
+      chatBox.appendChild(msgUsuario);
+
+      // Respuestas automáticas de la "IA" según la opción elegida
+      let respuestaIA = "";
+      if (opcion === "1") {
+        respuestaIA = "🤖 [Análisis IA]: El Bosque Andino regula el ciclo hídrico y alberga miles de especies endémicas de flora y fauna vitales para el equilibrio ecológico de la región.";
+      } else if (opcion === "2") {
+        respuestaIA = "🤖 [Análisis IA]: La pérdida de cobertura vegetal en los páramos reduce la retención de agua, amenazando las fuentes hídricas principales y el hábitat del oso de anteojos.";
+      } else {
+        respuestaIA = "🤖 [Análisis IA]: Se recomienda reducir el consumo de plásticos de un solo uso, promover la reforestación comunitaria y proteger las rondas hídricas locales.";
+      }
+
+      // 2. Simular un pequeño retraso de respuesta de la IA y mostrarla
+      setTimeout(() => {
+        const msgIA = document.createElement('div');
+        msgIA.className = 'mensaje ia';
+        msgIA.innerText = respuestaIA;
+        chatBox.appendChild(msgIA);
+        chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll hacia abajo
+      }, 500);
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>

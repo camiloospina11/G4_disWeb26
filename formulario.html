@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Contenedor principal usando CSS Grid */
+    .formulario-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px 15px;
+      align-items: center;
+      background-color: #e2ffcc;
+      border: 2px solid #143f0e;
+      padding: 25px;
+      width: 100%;
+      max-width: 550px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .formulario-grid fieldset {
+      grid-column: span 2;
+      border: 1px solid #a8b2bd;
+      padding: 10px 15px;
+      margin: 5px 0;
+      background-color: #fafafa;
+    }
+
+    .formulario-grid legend {
+      font-weight: bold;
+      color: #143f0e;
+    }
+
+    .seccion-titulo {
+      grid-column: span 2;
+      font-weight: bold;
+      color: #143f0e;
+      border-bottom: 1px solid #a8b2bd;
+      padding-bottom: 4px;
+      margin-top: 5px;
+    }
+
+    label {
+      font-size: 14px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #aeb8c2;
+      background-color: white;
+      box-sizing: border-box;
+    }
+
+    .grupo-opciones {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .opciones-verticales {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .contenedor-boton {
+      grid-column: span 2;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 8px 20px;
+      background-color: #143f0e;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: white;
+      color: #143f0e;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="formulario-grid">
+    <div class="seccion-titulo">Datos personales</div>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <label for="clave">Clave:</label>
+    <input type="password" id="clave" name="clave">
+
+    <label for="ubicacion">Ubicación:</label>
+    <input type="text" id="ubicacion" name="ubicacion">
+
+    <div class="seccion-titulo">Valoración del Ecosistema</div>
+    
+    <label>Opiniones:</label>
+    <div class="opciones-verticales">
+      <label><input type="radio" name="opinion" value="Excelente"> Excelente</label>
+      <label><input type="radio" name="opinion" value="Bueno" checked> Bueno</label> <!-- Marcado por defecto -->
+      <label><input type="radio" name="opinion" value="Regular"> Regular</label>
+    </div>
+
+    <fieldset>
+      <legend>Ecosistemas Favoritos</legend>
+      <div class="grupo-opciones">
+        <label><input type="checkbox" name="ecosistema" value="Bosque" checked> Bosque Andino</label> <!-- Marcado por defecto -->
+        <label><input type="checkbox" name="ecosistema" value="Paramo"> Páramo</label>
+        <label><input type="checkbox" name="ecosistema" value="Humedal"> Humedal</label>
+      </div>
+    </fieldset>
+
+    <label for="especies">Especie preferida:</label>
+    <select id="especies" name="especies">
+      <option value="Condor" selected>Cóndor de los Andes</option> <!-- Marcado por defecto -->
+      <option value="Oso">Oso de Anteojos</option>
+      <option value="Palma">Palma de Cera</option>
+      <option value="Danta">Danta de Montaña</option>
+    </select>
+
+    <div class="contenedor-boton">
+      <button type="submit">Enviar Registro</button>
+    </div>
+  </form>
+
+</body>
+</html>
